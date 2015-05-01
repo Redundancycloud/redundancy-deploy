@@ -19,7 +19,7 @@ cp ./README.md ./stable/redundancy/
 less ./stable/redundancy/Includes/Kernel/Kernel.Program.class.php | sed 's/Lenticularis/stable/' >  ./stable/redundancy/Includes/Kernel/Kernel.Program.class.php
 cd ./stable/redundancy
 git add *
-now=$(date +"%m.%d.%Y %H:%M")
+now=$(date +"%d.%m.%Y %H:%M")
 host=$(hostname)
 who=$(whoami)
 git commit -m "Snapshot $now by <$who@$host> [r2-Buildbot]"
