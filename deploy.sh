@@ -41,10 +41,11 @@ git add *
 now=$(date +"%d.%m.%Y %H:%M")
 host=$(hostname)
 who=$(whoami)
+version=$(cat ./Includes/Kernel/Kernel.Program.class.php |grep -E '\$Version\s=\s[^;]*' -oh |grep -E '([0-9]+\.[0-9]+\.[0-9]+\-[^;\"]*)' -oh)
 #remove unwanted files
 rm ./tests/ ./test ./webclient/ ./runTests.xml ./test ./composer.json -R
 git rm ./tests/ ./test ./webclient/ ./runTests.xml ./test ./composer.json  -r
-git commit -m "Snapshot $now by <$who@$host> [r2-Buildbot]"
+git commit -m "Snapshot $now by <$who@$host> $version [r2-Buildbot]"
 git push
 cd ..
 cd ..
